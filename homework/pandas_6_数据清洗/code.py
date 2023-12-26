@@ -34,6 +34,8 @@ print(f"{before_shape[0]-after_shape[0]}个空白行被删除。")
 # 提示：notnull(),根据值找索引
 # ###########begin############
 nullsummary = ChinaData.isnull().sum()
+# nullsummary==nullsummary.min()的意思是将nullsumarry这个series对象中每个元素与nullsummary.min()进行比较
+#最后，通过 index[0] 取出空值数量最少的年份对应的列名。
 print(nullsummary.loc[nullsummary == nullsummary.min()].index[0])
 # ############end#############
 # 2.6 前向填充"男性吸烟率（吸烟男性占所有成年人比例）"，输出2000年至2019年的数据
